@@ -18,7 +18,12 @@ class App extends Component {
     return (
       <main>
         <aside>
-          <ListOfPost items={posts} />
+          <ListOfPost
+            items={posts}
+            dismissPost={postId => {
+              this.setState({ posts: dismissPost(postId, posts) });
+            }}
+          />
         </aside>
       </main>
     );
@@ -26,3 +31,7 @@ class App extends Component {
 }
 
 export default App;
+
+export const dismissPost = (postId, listOfPost) => {
+  return listOfPost.filter(post => postId !== post.id);
+};
