@@ -1,26 +1,26 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
+import { ListOfPost } from "./components/listOfPost/listOfPost";
 
 class App extends Component {
   render() {
+    const items = [
+      {
+        id: 1,
+        author: "Manuel Castro",
+        title: "My test Post",
+        thumbnailURL:
+          "https://a.thumbs.redditmedia.com/hq5ioY9NRF8zt4j6xmvy0TpvsGFmr7c6YX-09yN0V_0.jpg",
+        entryDate: 1548022476,
+        numberOfComments: 2517
+      }
+    ];
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <main>
+        <aside>
+          <ListOfPost items={items} />
+        </aside>
+      </main>
     );
   }
 }
