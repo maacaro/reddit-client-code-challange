@@ -1,4 +1,5 @@
 import React from "react";
+import "./listOfPost.css";
 
 export const ListOfPost = ({ items }) => {
   const postItems = items.map(post => {
@@ -7,19 +8,22 @@ export const ListOfPost = ({ items }) => {
     );
     return (
       <div key={post.id}>
-        <h3>{post.author}</h3>
-        <small>{post.title}</small>
-        <div className="thumbnail">
-          <img src={post.thumbnailURL} alt="" />
-        </div>
-        <div>
+        <div className="postHeader">
+          <h3>{post.author}</h3>
           <div className="entryDate">{`${hoursAgo} hours ago`}</div>
+        </div>
+        <div className="postMain">
+          <div className="thumbnail">
+            <img src={post.thumbnailURL} alt="" />
+          </div>
+          <small>{post.title}</small>
         </div>
         <div className="numberOfComments">{`${
           post.numberOfComments
         } Comments`}</div>
+        <hr />
       </div>
     );
   });
-  return <ul>{postItems}</ul>;
+  return <ul className="listOfPost">{postItems}</ul>;
 };
