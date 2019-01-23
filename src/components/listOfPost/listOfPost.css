@@ -45,3 +45,18 @@ hr {
   height: 1px;
   background-color: white;
 }
+
+#dismissButton {
+  background: none;
+  color: white;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  font-size: smaller;
+  display: flex;
+  align-items: center;
+}
+.footerPost {
+  display: flex;
+}

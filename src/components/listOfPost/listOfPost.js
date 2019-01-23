@@ -18,9 +18,22 @@ export const ListOfPost = ({ items }) => {
           </div>
           <small>{post.title}</small>
         </div>
-        <div className="numberOfComments">{`${
-          post.numberOfComments
-        } Comments`}</div>
+        <div className="footerPost">
+          <button id="dismissButton">
+            <i
+              className="fa fa-times-circle-o"
+              style={{
+                fontSize: "large",
+                color: "#FFA500",
+                marginRight: "10px"
+              }}
+            />
+            Dismiss Post
+          </button>
+          <div className="numberOfComments">{`${
+            post.numberOfComments
+          } Comments`}</div>
+        </div>
         <hr />
       </div>
     );
