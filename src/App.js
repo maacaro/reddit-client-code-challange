@@ -1,24 +1,24 @@
 import React, { Component } from "react";
 import "./App.css";
 import { ListOfPost } from "./components/listOfPost/listOfPost";
+import { APIRequest } from "./API/api";
 
 class App extends Component {
+  state = {
+    posts: []
+  };
+
+  componentDidMount = async () => {
+    const posts = await APIRequest();
+    this.setState({ posts });
+  };
+
   render() {
-    const items = [
-      {
-        id: 1,
-        author: "Manuel Castro",
-        title: "My test Post",
-        thumbnailURL:
-          "https://a.thumbs.redditmedia.com/hq5ioY9NRF8zt4j6xmvy0TpvsGFmr7c6YX-09yN0V_0.jpg",
-        entryDate: 1548022476,
-        numberOfComments: 2517
-      }
-    ];
+    const { posts } = this.state;
     return (
       <main>
         <aside>
-          <ListOfPost items={items} />
+          <ListOfPost items={posts} />
         </aside>
       </main>
     );
