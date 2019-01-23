@@ -94,5 +94,37 @@ describe("ListOfPost Component", () => {
           .find(".numberOfComments")
       ).toHaveText("2517 Comments");
     });
+    describe("Dismiss Post Button", () => {
+      it("should call the function removePost at on click", () => {
+        const dismissPost = jest.fn(() => null);
+        const items = [{ id: 1, numberOfComments: 2517 }];
+
+        const wrapper = shallow(
+          <ListOfPost dismissPost={dismissPost} items={items} />
+        );
+        const dismissButton = wrapper
+          .find("ul")
+          .childAt(0)
+          .find("#dismissButton");
+        dismissButton.simulate("click");
+
+        expect(dismissPost).toBeCalledTimes(1);
+      });
+      it("should call the function removePost at on click with the correct argument", () => {
+        const dismissPost = jest.fn(() => null);
+        const items = [{ id: "idPost", numberOfComments: 2517 }];
+
+        const wrapper = shallow(
+          <ListOfPost dismissPost={dismissPost} items={items} />
+        );
+        const dismissButton = wrapper
+          .find("ul")
+          .childAt(0)
+          .find("#dismissButton");
+        dismissButton.simulate("click");
+
+        expect(dismissPost).toHaveBeenCalledWith("idPost");
+      });
+    });
   });
 });

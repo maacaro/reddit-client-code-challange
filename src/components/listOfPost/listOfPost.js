@@ -1,7 +1,7 @@
 import React from "react";
 import "./listOfPost.css";
 
-export const ListOfPost = ({ items }) => {
+export const ListOfPost = ({ dismissPost, items }) => {
   const postItems = items.map(post => {
     const hoursAgo = Math.floor(
       (Date.now() - post.entryDate * 1000) / (60 * 60 * 1000)
@@ -19,7 +19,7 @@ export const ListOfPost = ({ items }) => {
           <small>{post.title}</small>
         </div>
         <div className="footerPost">
-          <button id="dismissButton">
+          <button id="dismissButton" onClick={() => dismissPost(post.id)}>
             <i
               className="fa fa-times-circle-o"
               style={{
