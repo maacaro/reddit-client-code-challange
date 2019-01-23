@@ -1,0 +1,62 @@
+.listOfPost {
+  width: 330px;
+  color: white;
+  background: black;
+}
+.postHeader {
+  display: flex;
+  align-items: baseline;
+}
+.entryDate {
+  margin-left: 10px;
+  font-size: smaller;
+}
+.postMain {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.thumbnail {
+  position: relative;
+  width: 75px;
+  height: 75px;
+  overflow: hidden;
+}
+.postMain small {
+  margin-left: 10px;
+}
+.thumbnail img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 100%;
+  width: auto;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.numberOfComments {
+  margin-left: 10px;
+  font-size: smaller;
+  color: orange;
+}
+hr {
+  border: none;
+  height: 1px;
+  background-color: white;
+}
+
+#dismissButton {
+  background: none;
+  color: white;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  font-size: smaller;
+  display: flex;
+  align-items: center;
+}
+.footerPost {
+  display: flex;
+}
