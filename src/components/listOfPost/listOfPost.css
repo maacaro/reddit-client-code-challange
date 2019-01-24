@@ -20,24 +20,21 @@
   margin-bottom: 10px;
 }
 .thumbnail {
-  position: relative;
   width: 75px;
   height: 75px;
-  overflow: hidden;
+}
+.thumbnail button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: block;
+  width: 75px;
+  height: 75px;
 }
 .postMain small {
   margin-left: 10px;
 }
-.thumbnail img {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  height: 100%;
-  width: auto;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
+
 .numberOfComments {
   margin-left: 10px;
   font-size: smaller;

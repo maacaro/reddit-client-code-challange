@@ -64,8 +64,8 @@ describe("ListOfPost Component", () => {
           .childAt(0)
           .find(".thumbnail")
           .childAt(0)
-          .find("img")
-      ).toHaveProp("src", items[0].thumbnailURL);
+          .find("button")
+      ).toHaveLength(1);
     });
 
     it("should render the `entry date`", () => {

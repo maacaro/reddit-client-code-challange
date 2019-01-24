@@ -13,8 +13,13 @@ export const ListOfPost = ({ dismissPost, items }) => {
           <div className="entryDate">{`${hoursAgo} hours ago`}</div>
         </div>
         <div className="postMain">
-          <div className="thumbnail">
-            <img src={post.thumbnailURL} alt="" />
+          <div
+            className="thumbnail"
+            style={{
+              background: `url(${post.thumbnailURL}) 50% 50% no-repeat`
+            }}
+          >
+            <button />
           </div>
           <small>{post.title}</small>
         </div>
