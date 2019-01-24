@@ -1,7 +1,7 @@
 import React from "react";
 import "./listOfPost.css";
 
-export const ListOfPost = ({ dismissPost, items }) => {
+export const ListOfPost = ({ displayDetail, dismissPost, items }) => {
   const postItems = items.map(post => {
     const hoursAgo = Math.floor(
       (Date.now() - post.entryDate * 1000) / (60 * 60 * 1000)
@@ -19,7 +19,10 @@ export const ListOfPost = ({ dismissPost, items }) => {
               background: `url(${post.thumbnailURL}) 50% 50% no-repeat`
             }}
           >
-            <button />
+            <button
+              id="thumbnailButton"
+              onClick={() => displayDetail(post.id)}
+            />
           </div>
           <small>{post.title}</small>
         </div>

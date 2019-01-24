@@ -94,6 +94,7 @@ describe("ListOfPost Component", () => {
           .find(".numberOfComments")
       ).toHaveText("2517 Comments");
     });
+
     describe("Dismiss Post Button", () => {
       it("should call the function removePost at on click", () => {
         const dismissPost = jest.fn(() => null);
@@ -124,6 +125,38 @@ describe("ListOfPost Component", () => {
         dismissButton.simulate("click");
 
         expect(dismissPost).toHaveBeenCalledWith("idPost");
+      });
+    });
+    describe("thumbnails button", () => {
+      it("should call the function `displayDetail` at on click", () => {
+        const displayDetail = jest.fn(() => null);
+        const items = [{ id: 1, numberOfComments: 2517 }];
+
+        const wrapper = shallow(
+          <ListOfPost displayDetail={displayDetail} items={items} />
+        );
+        const thumbnailButton = wrapper
+          .find("ul")
+          .childAt(0)
+          .find("#thumbnailButton");
+        thumbnailButton.simulate("click");
+
+        expect(displayDetail).toBeCalledTimes(1);
+      });
+      it("should call the function `displayDetail` at on click with the correct argument", () => {
+        const displayDetail = jest.fn(() => null);
+        const items = [{ id: "idPost", numberOfComments: 2517 }];
+
+        const wrapper = shallow(
+          <ListOfPost displayDetail={displayDetail} items={items} />
+        );
+        const thumbnailButton = wrapper
+          .find("ul")
+          .childAt(0)
+          .find("#thumbnailButton");
+        thumbnailButton.simulate("click");
+
+        expect(displayDetail).toHaveBeenCalledWith("idPost");
       });
     });
   });
