@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import { ListOfPost } from "./components/listOfPost/listOfPost";
 import { APIRequest } from "./API/api";
+import { PostDetail } from "./components/postDetail/postDetail";
 
 class App extends Component {
   state = {
@@ -25,6 +26,13 @@ class App extends Component {
             }}
           />
         </aside>
+        <section style={{ marginLeft: "390px" }}>
+          <PostDetail
+            author="manuel"
+            title="hola mundo"
+            imageURL="https://a.thumbs.redditmedia.com/hq5ioY9NRF8zt4j6xmvy0TpvsGFmr7c6YX-09yN0V_0.jpg"
+          />
+        </section>
       </main>
     );
   }
